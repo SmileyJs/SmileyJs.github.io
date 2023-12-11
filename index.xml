@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>JS Blog</title>
+    <link>https://smileyjs.github.io/</link>
+    <description>Recent content on JS Blog</description>
+    <image>
+      <title>JS Blog</title>
+      <url>https://smileyjs.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://smileyjs.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Dec 2023 00:35:05 +0800</lastBuildDate><atom:link href="https://smileyjs.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023-12-11</title>
+      <link>https://smileyjs.github.io/posts/2023_12_11/</link>
+      <pubDate>Mon, 11 Dec 2023 00:35:05 +0800</pubDate>
+      
+      <guid>https://smileyjs.github.io/posts/2023_12_11/</guid>
+      <description>最近找工作收到了一份offer, 薪资还比较满意, 但是新工作会比较累, 不会怎么稳定, 总而言之不可兼得吧.
+好久没和梁哥通话了, 今天刚得知他准备裸辞了, 虽然现在在一个国企, 收入还不错, 工作也没在字节那么累. 但是, 按他的说法, 这个国企的工作让人心太累了, 宁愿裸辞下一份工作降薪都不想做了. 从来没见过他这种状态, 应该是真的过的很难受吧~ 下一步他的计划是 找个remote的工作或者找个在北京找个不加班轻松点的工作, 虽然现在这个经济环境找工作有点难, 但还是希望他能顺利吧.
+感觉同学们都年近35, 每个人都面临这不同的中年压力. 我和梁哥面对着找对象的压力和找工作的压力, 强哥面对和家人异地的难处和养家的压力, 牛哥面临着房贷的压力&amp;hellip;&amp;hellip; 都各有各的难处
+最近一年相亲的比较多, 当然是被拒绝的比较多&amp;hellip;&amp;hellip; 渐渐有了一些新的认识, 觉得自己之前的想法很不现实, 在这里总结一下:
+以自己的能力, 不应该找性格太好强的女生, 自己没办法满足她的物质需求, 会非常累 家庭条件一般的人, 其实不应该来大城市, 生活会非常辛苦, 当然, 个人能力非常强除外, 很遗憾, 自己三十多岁才意识到这一点 如果想要留在一线城市, 就必须非常卷, 不存在在一线城市躺的可能, 要早规划, 还不是太晚 基于以上的几点, 自己的选择
+在现在的公司继续待着, 抓紧提升外语和开发的能力, 看以后能不能找到remote的工作 在新公司卷两年, 攒够一些钱, 去二线城市找一个普通的工作, 过一个没那么卷的生活 在一线城市努力卷 这两天就得决定下来了!
+其实自己内心还是不喜欢太卷的生活的, 所以努力留在一线城市并不会很开心吧, 想想还是不应该努力留在这里~</description>
+    </item>
+    
+    <item>
+      <title>Variety_cast_in_cpp</title>
+      <link>https://smileyjs.github.io/posts/variety_cast_in_cpp/</link>
+      <pubDate>Wed, 13 Sep 2023 19:07:29 +0800</pubDate>
+      
+      <guid>https://smileyjs.github.io/posts/variety_cast_in_cpp/</guid>
+      <description>在cpp语言中一共有4中cast方式,分别是static_cast, dynamic_cast, const_cast和reinterpret_cast. 发现自己对这些没有完全理解, 下面具体单独分析:
+static_cast 编译时进行类型检查. 通常执行隐式的类型转换或者调用显式的类型转换方法
+执行隐式的类型转换 // 1) implicit conversion float f = 3.14; int a = static_cast&amp;lt;int&amp;gt;(f); 调用显式的类型转换方法 // 2) explicit call convert method class Integer { Integer(int x) : data_(x) { std::cout &amp;lt;&amp;lt; &amp;#34;Ctor of Integer&amp;#34; &amp;lt;&amp;lt; std::endl; } operator string() { std::cout &amp;lt;&amp;lt; &amp;#34;Conversion from Integer to string&amp;#34; &amp;lt;&amp;lt; std::endl; return to_string(data_); } private: int data_; }; int main() { Integer a(10); std::string str = static_cast&amp;lt;string&amp;gt;(a); std::cout &amp;lt;&amp;lt; &amp;#34;str is &amp;#34; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; std::endl; return 0; } 在继承体系中的转换 通常static_cast适用于向上转换的，否则其结果是未定义。但是如果引用或者指针指向的对象本身确实是目标类型，那么这个转换也是可行的。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode_460_LFU</title>
+      <link>https://smileyjs.github.io/posts/leetcode_460_lfu/</link>
+      <pubDate>Mon, 02 May 2022 19:02:45 +0800</pubDate>
+      
+      <guid>https://smileyjs.github.io/posts/leetcode_460_lfu/</guid>
+      <description>LeetCode LFU
+这道题要求实现一个LFU cache, 数据的类型是int.
+LFU, 即least frequently used, 当容量满时删除掉使用频率最低的一项. 不同于LRU, least recently used, 当容量满时删除掉最近没有使用的一项.
+第一版 因为LFU是&amp;lt;key, value&amp;gt;类型的, 所以实际存储的数据结构肯定是个map; 其次, 因为要记录各项的使用个数, 所以还要每一项添加一个connt值. 代码如下所示:
+class LFUCache { public: LFUCache(int capacity) { capacity_ = capacity; } int get(int key) { auto it = table_.find(key); if (it != table_.end()) { active(key); it-&amp;gt;second.cnt++; return it-&amp;gt;second.value; } else { return -1; } } void put(int key, int value) { auto it = table_.find(key); if (it !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode_3_subString</title>
+      <link>https://smileyjs.github.io/posts/leetcode_3_substring/</link>
+      <pubDate>Sun, 24 Apr 2022 18:58:25 +0800</pubDate>
+      
+      <guid>https://smileyjs.github.io/posts/leetcode_3_substring/</guid>
+      <description>leetCode 3 longest sub string
+这道题要求出string中没有重复字符的最长sub string. 考虑到复杂度的问题, 肯定不能用多次遍历查找所有sub string中最长的那个. 所以最初的思路大概是, 一次遍历的过程中维护一个没有重复字符的substring, 并记录过程中最大的长度.
+第一版 class Solution { public: int lengthOfLongestSubstring(string s) { using namespace std; deque&amp;lt;char&amp;gt; subStr; int maxLength = 0; for (int i = 0, j = 0; j &amp;lt;= i &amp;amp;&amp;amp; i &amp;lt; s.length();) { if (find(begin(subStr), end(subStr), s[i]) == end(subStr)) { subStr.push_back(s[i]); ++i; } else { maxLength = (subStr.size() &amp;gt; maxLength) ? subStr.size() : maxLength; subStr.pop_front(); ++j; } } return (subStr.</description>
+    </item>
+    
+    <item>
+      <title>The war between Ukrain and Russian</title>
+      <link>https://smileyjs.github.io/posts/war_ukrian_russian/</link>
+      <pubDate>Sat, 05 Mar 2022 00:42:40 +0800</pubDate>
+      
+      <guid>https://smileyjs.github.io/posts/war_ukrian_russian/</guid>
+      <description>关于俄乌战争的一些不成熟的想法 国小而不处卑，力少而不畏强，无礼而侮大邻，贪愎而拙交者，可亡也。
+最近俄乌开战，韩非的这句话突然流行起来。我理解得这句话是说了小国的生存之道，放在当前的背景下，看起来更像是乌克兰咎由自取一样。
+乍看这句话，感觉很有道理，当然也被很多朋友认为是俄罗斯入侵乌克兰合理的一个依据。但我一直觉得不太舒服，因为这句话的应用更像是在弱肉强食的丛林中，虽然是事实，但是总令人难以接受。
+这两天想了好多，我觉得我想明白了一些。这句话应该是告诫小国应该怎么在大国之间生存，并不是说小国做不到这些就该死，并不能成为任何势力和个体侵犯他人的理由。这就好像我们出门应该锁门一样，难道说我们不锁门外出，家里东西被人拿了就不算偷盗，是合法的吗？
+还有的人为了说明俄罗斯入侵合理，列举了一堆美国盟友入侵他国的例子，还有乌克兰国内的极端民族冲突的事例，但人家国内不好，并不能说俄罗斯就应该在未收到官方允许的情况下出兵去“帮”乌克兰解决问题。毕竟每个国家内部都有一些各自的问题和冲突……
+有人觉得北约东扩，侵犯了俄罗斯的战乱缓冲地区。我理解的这个东西，就是二战结束后雅尔塔会议三巨头在重新划分势力范围的产物。首先这个东西，类似于代理人，大概就是说一旦发生争端，尽量把冲突控制在周边地带，不要影响本国，这本来就是大国对于小国权益的不尊重，况且大国之间真的到了不得不打的地步，多一些“缓冲区”并没有什么用。
+我觉得的理想的世界，应该是所有的国家和各种民族、肤色、性别的人都是平等的，虽然很难实现，毕竟现实社会更像是一个丛林。但是我们可以用现实的理论来分析现实，而不应该把这种丛林法则理论看作是理所当然的。
+所以，在此基础上，大国把小国看成是附庸和外围，本来就是对现实世界妥协的产物。
+况且，即使从现实的角度看，要达成这种目标，大国给小国的要么是威胁，要么是利益，如果小国权衡利弊后发现有更好的替代者，自然这种关系就难以维系。
+己所不欲，勿施于人，这个道理代换进去，其实很容易想清楚。如果还把这个当成是合理的要求，那这想法可真是挺自私的……
+很多人想这个问题，都是从国家民族利益角度去想，但作为普通的个人，是什么让他们站到了这样的高度呢？不应该更多考虑的是战争中像我们一样的每一个个体吗？有时候国家的利益与普通平民并不完全一致。我理解的，这些大局更多代表的是政治家的利益和野心，战争中的平民没有胜利者。不管二战时候英美俄中、德意日，还是现在的乌克兰、俄罗斯平民，都是战争的受害者。
+所以，我觉得我自己，在今后很长一段的时间里，都会是个坚定的反战者，不支持任何国家和势力对他人的侵犯。</description>
+    </item>
+    
+    <item>
+      <title>Fibonacci</title>
+      <link>https://smileyjs.github.io/posts/fibonacci/</link>
+      <pubDate>Wed, 22 Dec 2021 23:34:11 +0800</pubDate>
+      
+      <guid>https://smileyjs.github.io/posts/fibonacci/</guid>
+      <description>最近参与面试了几个候选人，面试题中有一道计算Fibonacci数列的，发现自己对这道题的掌握也不怎么充分，所以写篇文章整理一下。
+Fibonacci数列的解法，复杂度来区分大概有指数型,常数型和对数型几种,下面一一介绍。
+普通递归 一般最常见，最容易理解的解法就是递归法了，代码如下：
+int fibo(int n) { if (0 == n) { return 0; } else if (1 == n) { return 1; } else { return fibo(n - 1) + fibo(n - 2); } } 递归法最大的问题在于它的容易造成栈溢出(尾递归除外), 其次是效率很低, 存在太多的重复计算。把具体的步骤分解为树状，形式如下：
+F(5) / \ F(4) F(3) / \ / \ F(3) F(2) F(2) F(1) / \ / \ / \ F(2) F(1) F(1) F(0) F(1) F(0) / \ F(1) F(0) 这里可以很直观的看到，为了计算F(5), 我们需要计算多次f(3)和f(2),这些都是不必要的。而这种解法的时间复杂度，是O($(\frac{1 + \sqrt5}{2})^n$)，或者也有人粗略的记为$O(2^n)$。</description>
+    </item>
+    
+    <item>
+      <title>My first blog</title>
+      <link>https://smileyjs.github.io/posts/my_first_blog/</link>
+      <pubDate>Tue, 21 Dec 2021 23:34:11 +0800</pubDate>
+      
+      <guid>https://smileyjs.github.io/posts/my_first_blog/</guid>
+      <description>自由与其说是集体的，不如说是个人存在的价值。政权本身（即使是人民政权）并不自动表明自由的状况。民主，尤其是人民政权理解的民主，可能变成较之专制政体更厉害的不自由。 当缺乏防御政权对人的侵犯，缺乏对人的法律保护，当个人完全从属于大多数人，从属于集体意志的时候，便会出现这种情况。这种民主很容易走向自己的反面——极权主义，大多数对少数、集体对个人、共性对个性的绝对权力。在这个意义上，任何政权，包括民主的、人民的政权，如果不受到法律的限制，不捍卫个人的权利，那么，都是对自由的威胁。
+——瓦·梅茹耶夫《知识分子与民主》</description>
+    </item>
+    
+  </channel>
+</rss>
